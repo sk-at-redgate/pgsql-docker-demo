@@ -1,11 +1,4 @@
 docker-compose.yaml.*
 *.sw* 
-data/*
-temp/*
-secrets/
-pgadmin/pgadmin4.db
-pgadmin/storage/*
-pgadmin/sessions/*
-pgadmin/azurecredentialcache/*
 
 
