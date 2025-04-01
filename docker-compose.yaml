@@ -1,5 +1,4 @@
 ---
-
 version: "3.9"
 
 services:
@@ -12,11 +11,11 @@ services:
       - '5555:5432'
     command: 'postgres -c shared_preload_libraries=auto_explain,pg_stat_statements -c pg_stat_statements.track=all -c max_connections=200' 
     environment:
-      POSTGRES_USER: 'dbuser'
-      POSTGRES_PASSWORD: 'password'
+      POSTGRES_USER_PWD_FILE: '/run/secrets/db-user-secret'
+      POSTGRES_USER_PWD_FILE: '/run/secrets/db-password-secret'
     volumes:
-      - '/opt/demo/data/:/var/lib/postgresql/data'
-      - '/opt/demo/temp/:/tmp/' 
+      - './data/:/var/lib/postgresql/data'
+      - './temp/:/tmp/' 
     networks:
       db_demo_net:
         ipv4_address: '175.20.0.6'  
@@ -26,6 +25,9 @@ services:
       timeout: '10s'
       retries: '10'
       start_period: '30s'
+    secrets:
+      - 'db-user-secret'
+      - 'db-password-secret'
 
   pgadmin:
     image: 'dpage/pgadmin4'
@@ -34,10 +36,10 @@ services:
     ports:
       - "9999:80"
     environment:
-      PGADMIN_DEFAULT_EMAIL: 's@khromoy.net' 
-      PGADMIN_DEFAULT_PASSWORD: 'changeme'
+      PGADMIN_DEFAULT_EMAIL: 's@khromoy.net'
+      PGADMIN_DEFAULT_PASSWORD_FILE: '/run/secrets/pgadmin_pwd_secret'
     volumes:
-      - '/opt/demo/pgadmin-data/:/var/lib/pgadmin'      
+      - './pgadmin-data/:/var/lib/pgadmin'      
     networks:
       db_demo_net:
         ipv4_address: '175.20.0.2'
@@ -47,6 +49,8 @@ services:
        timeout: 10s
        start_period: 160s
        retries: 3
+    secrets:
+      - 'pgadmin_pwd_secret'
 
 networks:
   db_demo_net:
@@ -54,3 +58,13 @@ networks:
       driver: 'default'
       config:
         - subnet: '175.20.0.0/24'        
+
+secrets:
+  db-user-secret:
+    file: './secrets/db_user.txt'
+  db-password-secret:
+    file: './secrets/db_password.txt' 
+  pgadmin_pwd_secret:
+    file: './secrets/pgadmin_passwd.txt' 
+    
+
