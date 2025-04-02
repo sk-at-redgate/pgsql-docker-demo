@@ -6,7 +6,7 @@ in the root directory of the repo run the following"
 4. chown -R 1001:1001 data
 
 Add secrets files as per docker-compose.yaml
-
+```
 secrets:
   db-user-secret:
     file: './secrets/db_user.txt'
@@ -14,3 +14,4 @@ secrets:
     file: './secrets/db_password.txt'
   pgadmin_pwd_secret:
     file: './secrets/pgadmin_passwd.txt'
+```
