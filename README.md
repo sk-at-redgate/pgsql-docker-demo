@@ -15,3 +15,9 @@ secrets:
   pgadmin_pwd_secret:
     file: './secrets/pgadmin_passwd.txt'
 ```
+
+in the same directory as docker-compose.yaml run 
+to start
+```docker-compose up -d```
+to stop
+`docker-compose down`
