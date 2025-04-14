@@ -41,6 +41,7 @@ services:
       PGADMIN_DEFAULT_PASSWORD_FILE: '/run/secrets/pgadmin_pwd_secret'
     volumes:
       - './pgadmin-data/:/var/lib/pgadmin'      
+      - './uploads/:/var/lib/pgadmin/storage/your_email.com'
     networks:
       db_demo_net:
         ipv4_address: '175.20.0.2'
