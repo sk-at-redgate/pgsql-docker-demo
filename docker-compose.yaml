@@ -37,7 +37,7 @@ services:
     ports:
       - "9999:80"
     environment:
-      PGADMIN_DEFAULT_EMAIL: 's@khromoy.net'
+      PGADMIN_DEFAULT_EMAIL: 'your@email.com'
       PGADMIN_DEFAULT_PASSWORD_FILE: '/run/secrets/pgadmin_pwd_secret'
     volumes:
       - './pgadmin-data/:/var/lib/pgadmin'      
