@@ -55,6 +55,17 @@ Create the following secret files in the `secrets` directory as referenced in th
 
 Example of `secrets` configuration in `docker-compose.yaml`:
 ```yaml
+=======
+in the root directory of the repo run the following
+
+1. ```mkdir -v {data,pgadmin-data,secrets,temp}```
+2. ```mkdir -v pgadmin-data/{azurecredentialcache,sessions,storage}```
+3. ```chown -R 5050:5050 pgadmin-data ```
+4. ```chown -R 1001:1001 data```
+
+Add secrets files as per docker-compose.yaml
+```
+>>>>>>> 6c64702086f0ddcd01a02632291683a59ded36aa
 secrets:
   db-user-secret:
     file: './secrets/db_user.txt'
@@ -64,6 +75,7 @@ secrets:
     file: './secrets/pgadmin_passwd.txt'
 ```
 
+<<<<<<< HEAD
 ---
 
 ### 4. Start and Stop the Stack
@@ -120,3 +132,9 @@ subnet: '175.20.0.0/24'
 ---
 
 For more details, refer to the [docker-compose.yaml](./docker-compose.yaml) file.
+=======
+in the same directory as docker-compose.yaml run 
+to start
+```docker-compose up -d```
+to stop
+`docker-compose down`
