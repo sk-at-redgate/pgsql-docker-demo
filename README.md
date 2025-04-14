@@ -110,9 +110,4 @@ subnet: '175.20.0.0/24'
 ---
 
 For more details, refer to the [docker-compose.yaml](./docker-compose.yaml) file.
-=======
-in the same directory as docker-compose.yaml run 
-to start
-```docker-compose up -d```
-to stop
-`docker-compose down`
+
