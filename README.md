@@ -111,3 +111,9 @@ subnet: '175.20.0.0/24'
 
 For more details, refer to the [docker-compose.yaml](./docker-compose.yaml) file.
 
+For more details, refer to the [docker-compose.yaml.documentation](./docker-compose-documentation.md) file.
+
+
+
+
+
