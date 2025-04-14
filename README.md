@@ -65,7 +65,6 @@ in the root directory of the repo run the following
 
 Add secrets files as per docker-compose.yaml
 ```
->>>>>>> 6c64702086f0ddcd01a02632291683a59ded36aa
 secrets:
   db-user-secret:
     file: './secrets/db_user.txt'
@@ -75,7 +74,6 @@ secrets:
     file: './secrets/pgadmin_passwd.txt'
 ```
 
-<<<<<<< HEAD
 ---
 
 ### 4. Start and Stop the Stack
