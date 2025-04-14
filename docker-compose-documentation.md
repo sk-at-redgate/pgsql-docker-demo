@@ -66,7 +66,7 @@ This service sets up pgAdmin, a web-based PostgreSQL management tool.
 - **Ports**:
   - Maps port `9999` on the host to port `80` in the container (pgAdmin's default port).
 - **Environment Variables**:
-  - `PGADMIN_DEFAULT_EMAIL`: Default admin email for pgAdmin (`s@khromoy.net`).
+  - `PGADMIN_DEFAULT_EMAIL`: Default admin email for pgAdmin (`your@email.com`).
   - `PGADMIN_DEFAULT_PASSWORD_FILE`: Path to the secret file containing the pgAdmin password.
 - **Volumes**:
   - `./pgadmin-data/:/var/lib/pgadmin`: Mounts the local `pgadmin-data` directory to pgAdmin's data directory.
