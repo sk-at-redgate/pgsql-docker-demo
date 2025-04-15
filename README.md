@@ -30,10 +30,10 @@ mkdir -v {data,pgadmin-data,secrets,temp}
 mkdir -v pgadmin-data/{azurecredentialcache,sessions,storage}
 
 # Set ownership for pgAdmin data directory
-chown -R 5050:5050 pgadmin-data
+chown -vR 5050:5050 pgadmin-data
 
 # Set ownership for PostgreSQL data directory
-chown -R 1001:1001 data
+chown -Rv 1001:1001 data
 ```
 
 ---
