@@ -26,14 +26,14 @@ In the root directory of the repository, execute the following commands to creat
 
 ```bash
 # Create required directories
-mkdir -v {data,pgadmin-data,secrets,temp}
+mkdir -v {data,pgadmin-data,secrets,temp,uploads}
 mkdir -v pgadmin-data/{azurecredentialcache,sessions,storage}
 
 # Set ownership for pgAdmin data directory
-chown -vR 5050:5050 pgadmin-data
+chown -vR 5050:5050 pgadmin-data/ uploads/
 
 # Set ownership for PostgreSQL data directory
-chown -Rv 1001:1001 data/ temp/
+chown -Rv 1001:1001 data/ temp/ 
 ```
 
 ---
