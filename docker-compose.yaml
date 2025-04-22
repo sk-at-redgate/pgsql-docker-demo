@@ -37,11 +37,11 @@ services:
     ports:
       - "9999:80"
     environment:
-      PGADMIN_DEFAULT_EMAIL: 'your@email.com'
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL}
       PGADMIN_DEFAULT_PASSWORD_FILE: '/run/secrets/pgadmin_pwd_secret'
     volumes:
       - './pgadmin-data/:/var/lib/pgadmin'      
-      - './uploads/:/var/lib/pgadmin/storage/your_email.com'
+      - './uploads/:/var/lib/pgadmin/storage/${STORAGE_DIR}'
     networks:
       db_demo_net:
         ipv4_address: '175.20.0.2'
